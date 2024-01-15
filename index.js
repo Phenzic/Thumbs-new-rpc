@@ -27,11 +27,6 @@ const STAKING_ADDRESS = process.env.STAKING_ADDRESS;
 const thumbsContractABI = require('./artifacts/contracts/Thumbs.sol/Thumbs.json').abi;
 const stakingContractABI = require('./artifacts/contracts/Thumbs.sol/StakingERC721.v1.json').abi;
 
-console.log('CONTRACT_ADDRESS', CONTRACT_ADDRESS);
-console.log('STAKING_ADDRESS', STAKING_ADDRESS);
-console.log('PRIVATE_KEY', PRIVATE_KEY);
-console.log('API_URL', API_URL);
-
 const alchemyProvider = new ethers.providers.JsonRpcProvider(API_URL);
 const signer = new ethers.Wallet(PRIVATE_KEY, alchemyProvider);
 const ThumbsContract = new ethers.Contract(CONTRACT_ADDRESS, thumbsContractABI, signer);
