@@ -1,12 +1,24 @@
 const express = require('express');
 const { ethers } = require('ethers');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import the cors package
 
 const { Network, Alchemy } = require('alchemy-sdk');
 
 const app = express();
 app.use(bodyParser.json());
 const port = process.env.PORT || 3050;
+
+
+
+// Define the CORS options
+const corsOptions = {
+  credentials: true,
+  origin: ['https://www.thumbssss.com/', 'http://localhost:80'] // Whitelist the domains you want to allow
+};
+
+app.use(cors(corsOptions)); // Use the cors middleware with your options
+
 
 
 const settings = {
